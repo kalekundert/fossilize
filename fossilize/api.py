@@ -5,11 +5,12 @@ from pathlib import Path
 from types import SimpleNamespace
 
 def fossilize(command, output_path=None):
+    command = list(command)
     slug = pick_slug(command)
     header = make_header(command)
     formatted_header = format_header(header)
     body = run_command(header.command, header.repo_dir)
-    output_path = resolve_path(output_path or '$.txt', slug)
+    output_path = resolve_path(str(output_path) or '$.txt', slug)
 
     write_file(output_path, formatted_header + '\n' + body)
 
