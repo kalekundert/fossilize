@@ -13,6 +13,7 @@ arguments, and confirm that they get the exact same result as before.
 
 Usage:
     fossilize [<output> --] <command>...
+    fossilize (-h | --help)
 
 Arguments:
     <output>
